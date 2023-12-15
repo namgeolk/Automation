@@ -1,0 +1,2702 @@
+  tapMultiple([[0.1822949,0.6180598],[0.2226603,0.5833373],[0.2617235,0.5925967],[0.2890677,0.6412081]]);
+  sleep(0.3);
+  /*치트 입력*/
+    inputText('','preset 103');
+  sleep(0.2);
+  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'치트실행'}),FULL_AREA,3)) {
+    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'SendButton'}),0,FULL_AREA,1);
+    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'SendButton'}),0,FULL_AREA,1);
+
+  }
+  sleep(3);
+    restartApp();
+  testcase('재실행 후, 서버 선택', 'Id', function(){
+
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'FQA'}),FULL_AREA,3)); }, 30 );
+    tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'FQA'}),0,FULL_AREA,1);
+    sleep(3);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하세요.'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하세요.'}),0,FULL_AREA,5);
+      assertTrue('Name', true);
+      sleep(90);
+
+    }
+  });
+  testcase('영지 접속 후, 연맹 버튼 확인', 'Id', function(){
+
+    repeatWhileTrueOfTimeout( function(){
+    	if (!(matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ImageHoleRect'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', name:'Hand_01'}),FULL_AREA,3))) { // condition
+    	  if (isOS(ANDROID)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'AllianceButton'}),0,FULL_AREA,1);
+    	    sleep(1);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonClose'}),0,FULL_AREA,1);
+    	    sleep(1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 300);
+    if (isOS(ANDROID)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'AllianceButton'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonClose'}),0,FULL_AREA,1);
+      sleep(1);
+
+    }
+    assertTrue('연맹 버튼 닫았는지 확인', (!matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ImageHoleRect'}),FULL_AREA,3) && !matchUIObject(new Object({clazz:'UnityEngine.UI.Image', name:'Hand_01'}),FULL_AREA,3)));
+  });
+  /*고난의탑 셋팅 치트*/
+    tapMultiple([[0.1822949,0.6180598],[0.2226603,0.5833373],[0.2617235,0.5925967],[0.2890677,0.6412081]]);
+    sleep(1);
+    /*치트 입력*/
+      inputText('','AAAA');
+    tapUIObject(new Object({clazz:'android.widget.Button', ntext:'확인'}),0,FULL_AREA,1);
+    sleep(1);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'치트실행'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'치트실행'}),0,FULL_AREA,1);
+
+    }
+    sleep(1);
+    tapUIObject(new Object({clazz:'android.widget.Button', ntext:'확인'}),0,FULL_AREA,1);
+    sleep(1);
+    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', name:'InputField (TMP)'}),0,FULL_AREA,1);
+    inputText('','챕터');
+    sleep(1);
+    tapUIObject(new Object({clazz:'android.widget.Button', ntext:'확인'}),0,FULL_AREA,1);
+    sleep(1);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'챕터 강제 변경'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'챕터 강제 변경'}),0,FULL_AREA,1);
+
+    }
+    sleep(1);
+    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', name:'InputField (TMP)'}),0,new Area(0.34, 0.36, 0.51, 0.59),1);
+    inputText('','132');
+    sleep(1);
+    tapUIObject(new Object({clazz:'android.widget.Button', ntext:'확인'}),0,FULL_AREA,1);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonOk'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonOk'}),0,FULL_AREA,1);
+
+    }
+  restartApp();
+  testcase('재실행 후, 서버 선택', 'Id', function(){
+
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'FQA'}),FULL_AREA,3)); }, 30 );
+    tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'FQA'}),0,FULL_AREA,1);
+    sleep(3);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하세요.'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하세요.'}),0,FULL_AREA,5);
+      assertTrue('Name', true);
+      sleep(15);
+
+    }
+  });
+  testcase('챕터 버튼 클릭 후, 고난의 탑 이동', 'Id', function(){
+
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)) { // condition
+    	  tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'QuestButton'}),0,FULL_AREA,1);
+    	  sleep(1.5);
+    	  swipe(0.5,0.5,0.5,0.42);
+    	  sleep(1);
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑 30층 클리어'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'바로가기'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'바로가기'}),0,new Area(0.75, 0.4, 0.14, 0.58),1);
+
+    	  }
+    	  sleep(1);
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 180);
+    assertTrue('고난의 탑, 오브젝트 검증', (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'BTN_Action'}),FULL_AREA,3)));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'BTN_Action'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'BTN_Action'}),0,FULL_AREA,1);
+
+    }
+  });
+  testcase('고난탑진행', '1층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'1층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+        repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'100'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+  testcase('고난탑진행', '2층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'2층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'130'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+  testcase('고난탑진행', '3층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'3층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'170'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '4층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'4층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'200'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '5층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'5층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'250'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '6층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'6층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'400'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '7층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'7층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'500'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '8층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'8층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'550'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '9층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'9층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'600'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '10층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'10층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'650'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '11층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'11층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'150'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '12층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'12층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'160'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+  testcase('고난탑진행', '13층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'13층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'170'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '14층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'14층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'180'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '15층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'15층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'200'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '16층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'16층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'220'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '17층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'17층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'240'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '18층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'18층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'260'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '19층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'19층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'280'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '20층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'20층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'300'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+  testcase('고난탑진행', '21층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'21층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'160'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '22층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'22층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'170'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '23층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'23층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'180'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '24층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'24층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'190'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '25층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'25층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'200'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+  testcase('고난탑진행', '26층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'26층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'210'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });  
+    testcase('고난탑진행', '27층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'27층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'220'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '28층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'28층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'230'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '29층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'29층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'240'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+    testcase('고난탑진행', '30층', function(){
+
+    assertTrue('고난탑 화면 검증', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'30층'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'Btn_Start'}),0,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),FULL_AREA,3)); }, 60 );
+    for (var count = 0; count < 5; count++) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonAdd'}),0,FULL_AREA,1);
+      sleep(1);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'SideTab_Troop_Archery_N(Clone)'}),0,FULL_AREA,1);
+      sleep(0.5);
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonDeploy'}),0,FULL_AREA,1);
+    }
+    sleep(0.5);
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),FULL_AREA,3)) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'StartButton'}),0,FULL_AREA,1);
+
+    }
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_8(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3)) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 60);
+    sleep(2);
+    repeatWhileTrueOfTimeout( function(){
+    	if (!!(matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_5(Clone)'}),new Area(0, 0.17, 0.15, 0.71),3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),new Area(0, 0.17, 0.15, 0.71),3))) { // condition
+
+
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_herostatus_1sword'}),0,FULL_AREA,1);
+
+    	  }
+    	  sleep(1);
+    	  if (matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),FULL_AREA,3)) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'WorldTab_Button'}),0,FULL_AREA,1);
+
+    	  }
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'출정'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Image', sprite:'icon_troop_archery(Clone)'}),0,FULL_AREA,1);
+
+
+    	    sleep(0.5);
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonMarch'}),0,FULL_AREA,1);
+
+    	  }
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 120);
+    sleep(1);
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3)); }, 180 );
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'승리'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'250'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'화면을 터치하여 계속하기'}),1,FULL_AREA,1);
+
+    }
+    waitUntilCondition(function(){ return (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3)); }, 60 );
+    assertTrue('고난탑 메인', matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'고난의 탑'}),FULL_AREA,3));
+  });
+/*고난의 탑 클리어 확인 후, 영지로*/
+    if (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'<size=40>STAGE</size>\\n<size=50>CLEAR</size>'}),FULL_AREA,3)) {tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'ButtonCancel'}),0,FULL_AREA,1);
+  
+  }
+
+sleep(2)
+/*빙하의 탑*/
+  testcase('챕터 버튼 클릭 후, 빙하의 탑 이동', 'Id', function(){
+
+    repeatWhileTrueOfTimeout( function(){
+    	if (!matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'빙하의 탑'}),FULL_AREA,3)) { // condition
+    	  tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'QuestButton'}),0,FULL_AREA,1);
+    	  sleep(1.5);
+    	  swipe(0.5,0.5,0.5,0.42);
+    	  sleep(1);
+    	  if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'빙하의 탑 20층 클리어'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'바로가기'}),FULL_AREA,3))) {
+    	    tapUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'바로가기'}),0,new Area(0.75, 0.4, 0.14, 0.58),1);
+
+    	  }
+    	  sleep(1);
+
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }, 180);
+    assertTrue('빙하의 탑, 오브젝트 검증', (matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'빙하의 탑'}),FULL_AREA,3) && matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'BTN_Action'}),FULL_AREA,3)));
+    if ((matchUIObject(new Object({clazz:'UnityEngine.UI.Text', text:'빙하의 탑'}),FULL_AREA,3) || matchUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'BTN_Action'}),FULL_AREA,3))) {
+      tapUIObject(new Object({clazz:'UnityEngine.UI.Button', name:'BTN_Action'}),0,FULL_AREA,1);
+
+    }
+  });
